@@ -71,7 +71,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Toolbar />
+        <Toolbar 
+          messages={this.state.messages}/>
         <MessageList 
           messages={this.state.messages}/>
       </div>
