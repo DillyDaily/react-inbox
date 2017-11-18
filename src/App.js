@@ -67,18 +67,28 @@ class App extends Component {
       }
     ]
   }
-
-  handleSelected() {
-    this.setState({ read: !this.state.read })
-  }
-
-  handleStarred() {
-    this.setState({ starred: !this.state.starred })
-  }
-
-  handleDevLabel = (e) => {
-    this.setState({ labels: false })
-  }
+ 
+  handleStarred = (isStarred) => {
+    this.setState((prevState) => { 
+      let index = prevState.messages.indexOf(isStarred)
+      prevState.messages[index].starred = !prevState.messages[index].starred;
+      return {...isStarred}
+  })
+}
+  handleRead = (isRead) => {
+    this.setState((prevState) => { 
+      let index = prevState.messages.indexOf(isRead)
+      prevState.messages[index].read = !prevState.messages[index].read;
+      return {...isRead}
+  })
+}
+  handleSelected = (isSelected) => {
+    this.setState((prevState) => { 
+      let index = prevState.messages.indexOf(isSelected)
+      prevState.messages[index].read = !prevState.messages[index].read;
+      return {...isSelected}
+  })
+}
 
   render() {
     return (
@@ -89,6 +99,7 @@ class App extends Component {
           messages={this.state.messages}
           handleStarred={this.handleStarred}
           handleSelected={this.handleSelected}
+          handleRead={this.handleRead}
           />
       </div>
     );

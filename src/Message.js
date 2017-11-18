@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 
 class Message extends Component {
 
-// const Message = (props) => {
-//     console.log('message props ', props)
-    
 render() {
     console.log('message class info ', this.props)
     let subject = this.props.theMessage.subject;
@@ -27,11 +24,14 @@ render() {
             <div className="col-xs-1">
               <div className="row">
                 <div className="col-xs-2">
-                  <input type="checkbox" defaultChecked={`${checkUncheck}`} />
+                  <input type="checkbox" defaultChecked={`${checkUncheck}`} 
+                  value={selected}
+                  onChange={()=> this.props.handleSelected(this.props.theMessage)}/>
                 </div>
                 <div className="col-xs-2">
                   <i className={`star fa fa-${starUnstar}`}
-                  onClick={this.props.handleStarred.bind(this)}></i>
+                  value={starred}
+                  onClick={()=> this.props.handleStarred(this.props.theMessage)}></i>
                 </div>
               </div>
             </div>
