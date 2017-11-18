@@ -68,13 +68,28 @@ class App extends Component {
     ]
   }
 
+  handleSelected() {
+    this.setState({ read: !this.state.read })
+  }
+
+  handleStarred() {
+    this.setState({ starred: !this.state.starred })
+  }
+
+  handleDevLabel = (e) => {
+    this.setState({ labels: false })
+  }
+
   render() {
     return (
       <div className="App">
         <Toolbar 
           messages={this.state.messages}/>
         <MessageList 
-          messages={this.state.messages}/>
+          messages={this.state.messages}
+          handleStarred={this.handleStarred}
+          handleSelected={this.handleSelected}
+          />
       </div>
     );
   }

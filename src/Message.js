@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Message = (props) => {
-    console.log('message props ', props)
+class Message extends Component {
+
+// const Message = (props) => {
+//     console.log('message props ', props)
     
-    let subject = props.theMessage.subject;
-    let starred = props.theMessage.starred;
-    let selected = props.theMessage.selected;
-    let read = props.theMessage.read;
-    // let devLabels = props.theMessage.labels[0];
-    // let persLabels = props.theMessage.labels[1];
+render() {
+    console.log('message class info ', this.props)
+    let subject = this.props.theMessage.subject;
+    let starred = this.props.theMessage.starred;
+    let selected = this.props.theMessage.selected;
+    let read = this.props.theMessage.read;
+    let devLabels = this.props.theMessage.labels[0];
+    let persLabels = this.props.theMessage.labels[1];
 
     let readUnread = read ? "read" : "unread"
     let starUnstar = starred ? "star" : "star-o"
     let checkUncheck = selected ? "checked" : ""
     let selectUnselect = selected ? "selected" : ""
-    // let devNodev = devLabels ? "" : ""
+    let devNodev = devLabels ? "dev" : ""
+    let gschoolYN = persLabels ? "gschool" : ""
     
     return (
 
@@ -25,23 +30,21 @@ const Message = (props) => {
                   <input type="checkbox" defaultChecked={`${checkUncheck}`} />
                 </div>
                 <div className="col-xs-2">
-                  <i className={`star fa fa-${starUnstar}`}></i>
+                  <i className={`star fa fa-${starUnstar}`}
+                  onClick={this.props.handleStarred.bind(this)}></i>
                 </div>
               </div>
             </div>
             <div className="col-xs-11">
-            <span className="label label-warning">dev</span>
-              <span className="label label-warning">gschool</span>
+            <span className="label label-warning">{devNodev}</span>
+              <span className="label label-warning">{gschoolYN}</span>
               <a href="#">
                 {subject}
               </a>
             </div>
-
-            
           </div>
+       );
+     }
+   } 
 
-
-
-    )
-}
 export default Message

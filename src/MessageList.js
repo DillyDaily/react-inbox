@@ -4,13 +4,15 @@ import Toolbar from './Toolbar';
 
 const MessageList = (props) => {
     console.log('messageList props ', props)
-   let messages = props.messages.map(message => <Message key={message.id} theMessage={message}
-     />)
+
+    let messages = props.messages.map(message => 
+        <Message key={message.id} theMessage={message} handleStarred={props.handleStarred}/>)
+
     
     return (
         
             <div>
-                {messages}
+                {messages} 
           </div>
     
     )
