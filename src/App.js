@@ -85,7 +85,7 @@ class App extends Component {
   handleSelected = (isSelected) => {
     this.setState((prevState) => { 
       let index = prevState.messages.indexOf(isSelected)
-      prevState.messages[index].read = !prevState.messages[index].read;
+      prevState.messages[index].selected = !prevState.messages[index].selected;
       return {...isSelected}
   })
 }

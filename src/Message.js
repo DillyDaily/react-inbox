@@ -13,8 +13,8 @@ render() {
 
     let readUnread = read ? "read" : "unread"
     let starUnstar = starred ? "star" : "star-o"
-    let checkUncheck = selected ? "checked" : ""
     let selectUnselect = selected ? "selected" : ""
+    let checkUncheck = selectUnselect ? "checked" : ""
     let devNodev = devLabels ? "dev" : ""
     let gschoolYN = persLabels ? "gschool" : ""
     
@@ -24,8 +24,7 @@ render() {
             <div className="col-xs-1">
               <div className="row">
                 <div className="col-xs-2">
-                  <input type="checkbox" defaultChecked={`${checkUncheck}`} 
-                  value={selected}
+                  <input type="checkbox" defaultChecked={selected} 
                   onChange={()=> this.props.handleSelected(this.props.theMessage)}/>
                 </div>
                 <div className="col-xs-2">
@@ -38,7 +37,7 @@ render() {
             <div className="col-xs-11">
             <span className="label label-warning">{devNodev}</span>
               <span className="label label-warning">{gschoolYN}</span>
-              <a href="#">
+              <a href="">
                 {subject}
               </a>
             </div>
