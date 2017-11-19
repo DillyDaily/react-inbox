@@ -19,7 +19,7 @@ render() {
     let gschoolYN = persLabels ? "gschool" : ""
     
     return (
-
+        <div className="container">
         <div className={`row message ${readUnread} ${selectUnselect}`}>
             <div className="col-xs-1">
               <div className="row">
@@ -41,6 +41,7 @@ render() {
                 {subject}
               </a>
             </div>
+          </div>
           </div>
        );
      }

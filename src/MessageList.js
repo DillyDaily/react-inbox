@@ -12,6 +12,7 @@ const MessageList = (props) => {
     return (
         
             <div>
+                
                 {messages} 
           </div>
     

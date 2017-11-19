@@ -9,13 +9,19 @@ const Toolbar = (props) => {
 
     
     return (
-     <div className="row toolbar">
-        <div className="col-md-12">
+        <div className="navbar navbar-default" role="navigation">
+          <div className="row toolbar">
+           <div className="col-md-12">
 
+            <div className="navbar-headder">
+                <a className="navbar-brand" href="/"> Welcome to Your Inbox</a>
+            
+           
             <p className="pull-right">
              <span className="badge badge">2</span>
                unread messages
             </p>
+            </div>
             
             <a className="btn btn-danger">
              <i className="fa fa-plus"></i>
@@ -46,7 +52,8 @@ const Toolbar = (props) => {
             <button className="btn btn-default">
                 <i className="fa fa-trash-o"></i>
             </button>
-            
+
+       </div>
       </div>
     </div>
     )

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Toolbar from './Toolbar';
 import MessageList from './MessageList';
+import Footer from './Footer';
+
 
 class App extends Component {
 
@@ -101,6 +103,7 @@ class App extends Component {
           handleSelected={this.handleSelected}
           handleRead={this.handleRead}
           />
+        <Footer />
       </div>
     );
   }
