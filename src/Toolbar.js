@@ -3,9 +3,9 @@ import React from 'react';
 const Toolbar = (props) => {
     console.log('Toolbar props ', props)
     
-   // let starred = props.theMessage.starred;
-   
-    // let starUnstar = starred ? "star" : "star-o"
+   let someSelected = props.numOfSelectedMsgs > 0 && props.numOfSelectedMsgs < props.messages.length ? '-minus' : null;
+   let allSelected = props.numOfSelectedMsgs == props.messages.length ? '-check' : null;
+   let noneSelected = props.numOfSelectedMsgs == 0 ? '' : null;   
 
     
     return (
