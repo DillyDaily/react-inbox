@@ -7,7 +7,10 @@ const Toolbar = (props) => {
    let allSelected = props.numOfSelectedMsgs == props.messages.length ? '-check' : null;
    let noneSelected = props.numOfSelectedMsgs == 0 ? '' : null;   
 
-    
+//    toggleShowCompose = () => {
+//        props.toggleShowCompose
+//    } 
+
     return (
         <div className="navbar navbar-default" role="navigation">
           <div className="row toolbar">
@@ -23,7 +26,7 @@ const Toolbar = (props) => {
             </p>
             </div>
             
-            <a className="btn btn-danger">
+            <a className="btn btn-danger" onClick={props.toggleComposeForm}>
              <i className="fa fa-plus"></i>
             </a>
 
